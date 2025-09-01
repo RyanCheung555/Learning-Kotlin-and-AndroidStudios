@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     lateinit var etB : EditText
     lateinit var resultTv : TextView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,6 +34,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         btnSub = findViewById(R.id.btn_subtraction)
         btnMultiplication = findViewById(R.id.btn_multiplication)
         btnDivision = findViewById(R.id.btn_division)
+        etA = findViewById(R.id.et_a)
+        etB = findViewById(R.id.et_b)
+        resultTv = findViewById(R.id.result_tv)
+
+        btnAdd.setOnClickListener(this)
+        btnSub.setOnClickListener(this)
+        btnMultiplication.setOnClickListener(this)
+        btnDivision.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -53,5 +62,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 result = a/b
             }
         }
+        resultTv.text = "Result is $result"
     }
 }
